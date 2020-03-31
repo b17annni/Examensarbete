@@ -7,6 +7,7 @@ const Myheader = () => {
     <View style={styles.titleContainer}>
       <View style={styles.headerContainer}>
         <Text style={styles.titleText}>Gregers-FaraHärIfrån</Text>
+        <Text style={styles.subtitle}> Sök hållplatser </Text>
       </View>
     </View>
   );
@@ -14,17 +15,21 @@ const Myheader = () => {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flex: 1,
     backgroundColor: '#1F1B24',
   },
   headerContainer: {
-    flex: 1,
+    padding: 5,
     alignItems: 'center',
     justifyContent: 'center',
   },
   titleText: {
     fontSize: 40,
     color: '#f0f8ff',
+  },
+  subtitle: {
+    fontSize: 20,
+    color: '#f0f8ff',
+    margin: 2,
   },
 });
 

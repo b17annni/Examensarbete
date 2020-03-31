@@ -1,5 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+import Myheader from './components/header';
+import Search from './components/searching';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,42 +17,32 @@ export default class App extends React.Component {
       dataSource: null,
     };
   }
-
-  componentDidMount() {
-    return fetch(
-      'https://api.resrobot.se/v2/location.nearbystops?key=<key>&originCoordLat=59.293525&originCoordLong=18.083519&maxNo=5&format=json',
-    )
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState({
-          isloading: false,
-          dataSource: responseJson.StopLocation,
-        });
-      })
-
-      .catch(error => {
-        console.log(error);
-      });
-  }
   render() {
-    if (this.state.isloading) {
-      return (
-        <View style={styles.container}>
-          <ActivityIndicator />
-          <Text style={styles.text}> This text </Text>
+    return (
+      <View style={styles.container}>
+        <Myheader />
+        <TextInput
+          style={styles.inputkord}
+          placeholder={'Latitude'}
+          onChangeText={lati => this.setState({inlati: lati})}
+          returnKeyType={'next'}
+          value={this.state.inlati}
+        />
+        <TextInput
+          style={styles.inputkord}
+          placeholder={'Longitude'}
+          onChangeText={longi => this.setState({inlongi: longi})}
+          returnKeyType={'next'}
+          value={this.state.inlongi}
+        />
+        <View style={styles.btbt}>
+          <TouchableOpacity style={styles.btn} onPress={onPress}>
+            <Text style={styles.text}>Press Here</Text>
+          </TouchableOpacity>
         </View>
-      );
-    } else {
-      let places = this.state.dataSource.map((val, key) => {
-        return (
-          <View key={key} style={styles.keystyle}>
-            <Text style={styles.text}>{val.name}</Text>
-          </View>
-        );
-      });
-
-      return <View style={styles.container}>{places}</View>;
-    }
+        <Search />
+      </View>
+    );
   }
 }
 
@@ -57,6 +55,27 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
+    borderColor: '#eee',
+  },
+  btbt: {
+    flexDirection: 'row',
+    margin: 5,
+    backgroundColor: '#184032',
+    borderRadius: 100 / 2,
+  },
+  btn: {
+    margin: 5,
+  },
+  inputkord: {
+    height: 40,
+    width: 200,
+    borderColor: 'gray',
+    borderWidth: 1,
+    justifyContent: 'flex-end',
+    color: '#1F1B24',
+    backgroundColor: '#eee',
+    padding: 10,
+    marginBottom: 5,
   },
   keystyle: {
     flex: 1,
