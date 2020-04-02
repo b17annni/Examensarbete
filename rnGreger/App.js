@@ -5,11 +5,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import SetSearch from './components/inputs';
 import ListLocations from './components/getlocations';
+import Myheader from './components/header';
 
 function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home Screen</Text>
+      <Myheader />
       <SetSearch />
       <Button
         title="Go to Details"

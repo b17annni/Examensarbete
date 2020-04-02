@@ -4,12 +4,8 @@ import {Text, View, StyleSheet, Button, TextInput} from 'react-native';
 export default function SetSearch() {
   const [long, setlong] = useState('');
   const [lat, setlat] = useState('');
-  global.longi = '11.964167';
-  global.lati = '57.711111';
-  const presshandler = () => {
-    global.lati = lat;
-    global.longi = long;
-  };
+  global.lati = lat;
+  global.longi = long;
 
   return (
     <View style={styles.container}>
@@ -30,9 +26,6 @@ export default function SetSearch() {
           placeholder="Longitude"
           onChangeText={long => setlong(long)}
         />
-      </View>
-      <View style={styles.btn}>
-        <Button title="Search Locations" onPress={presshandler} color="coral" />
       </View>
     </View>
   );
