@@ -1,19 +1,22 @@
 <template>
     <Page>
         <ActionBar title="TNS-vue Gregers - FaraHärIfrån"/>
-        <GridLayout columns="*" rows="*">
-            <Label class="message" :text="msg" col="0" row="0"/>
+        <GridLayout>
+           <frame id="home-page">
+             <HomePage />
+           </frame>
         </GridLayout>
     </Page>
 </template>
 
 <script >
+import HomePage from './HomePage';
+import { screen } from 'tns-core-modules/platform';
+
   export default {
-    data() {
-      return {
-        msg: 'This will be replaced'
-      }
-    }
+   components: {
+     HomePage
+   },
   }
 </script>
 
