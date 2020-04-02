@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
 
-export default class Search extends React.Component {
+export default class ListLocations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,12 +9,11 @@ export default class Search extends React.Component {
       dataSource: null,
     };
   }
-
   componentDidMount() {
-    const lati = '57.711111';
-    const longi = '11.964167';
+    const lati = global.lati;
+    const longi = global.longi;
     return fetch(
-      'https://api.resrobot.se/v2/location.nearbystops?key=808aabc0-1955-4159-b21c-46b52d70dce1&originCoordLat=' +
+      'https://api.resrobot.se/v2/location.nearbystops?key=<KEY>&originCoordLat=' +
         lati +
         '&originCoordLong=' +
         longi +
@@ -37,7 +36,7 @@ export default class Search extends React.Component {
       return (
         <View style={styles.container}>
           <ActivityIndicator />
-          <Text style={styles.text}> This text </Text>
+          <Text style={styles.text}> Loading Locations </Text>
         </View>
       );
     } else {
