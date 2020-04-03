@@ -9,6 +9,7 @@
                     </StackLayout>
                 </v-template>
             </ListView>
+              <button text="lert" @tap="lerler" />
             <button text="Back" @tap="GetHome" />
         </StackLayout>
     </Page>
@@ -24,7 +25,10 @@ export default {
     methods: {
         GetHome(args) {
             this.$navigateTo(HomePage);
-        }
+        },
+           lerler(args) {
+            alert(global.lati);
+        }    
     },
      data() {
             return {
@@ -32,8 +36,8 @@ export default {
             };
         },
         mounted() { 
-            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=<KEY>&originCoordLat=57.711111&originCoordLong=11.964167&maxNo=5&format=json").then(result => {
-    this.location = result.StopLocations;
+            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=<KEY></KEY>&originCoordLat=57.711111&originCoordLong=11.964167&maxNo=5&format=json").then(result => {
+    this.location = result.StopLocation;
 }, error => {
     console.log(error);
 });
