@@ -1,7 +1,7 @@
 <template>
     <Page actionBarHidden="true">
         <StackLayout>
-            <label text="Gregers-FaraHärIfrån..  baccysssddydy"></label>
+            <label text="Gregers-FaraHärIfrån..  Bby"></label>
             <TextField v-model="latVal" hint="Latitude" keyboardType="number" returnKeyType="next" />
             <TextField v-model="longVal" hint="Longitude" keyboardType="number" returnKeyType="next" />
             <label :text=" this.longVal + this.latVal "  />
@@ -18,9 +18,9 @@ export default {
     },
     methods: {
         ShowLocationsTap(args) {
-            this.$navigateTo(showlocations);
             global.lati = this.latVal;
             global.longi = this.longVal;
+            this.$navigateTo(showlocations);
         },
     },
     data() {

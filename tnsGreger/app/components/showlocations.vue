@@ -27,7 +27,7 @@ export default {
             this.$navigateTo(HomePage);
         },
            lerler(args) {
-            alert(global.lati);
+            alert(global.longi);
         }    
     },
      data() {
@@ -36,7 +36,9 @@ export default {
             };
         },
         mounted() { 
-            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=<KEY></KEY>&originCoordLat=57.711111&originCoordLong=11.964167&maxNo=5&format=json").then(result => {
+            var lat = global.lati;
+            var long = global.longi;
+            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=<KEY></KEY>&originCoordLat="+lat+"&originCoordLong="+long+"&maxNo=5&format=json").then(result => {
     this.location = result.StopLocation;
 }, error => {
     console.log(error);
