@@ -3,6 +3,6 @@
   "appName": "IonGreger",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www",
+  "webDir": "build",
   "cordova": {}
 }
