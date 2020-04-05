@@ -1,0 +1,7 @@
+{
+  "name": "IonGreger",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
