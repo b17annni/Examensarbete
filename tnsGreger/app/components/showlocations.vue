@@ -1,15 +1,14 @@
 <template>
     <Page actionBarHidden="true">
            <StackLayout>
-            <label text="Gregers-FaraHärIfrån"></label>
+            <label class="mySubtitle" text="Your Locations"></label>
              <ListView for="p in location" class="list-group">
                 <v-template>
                     <StackLayout class="list-group-item">
-                        <Label :text="p.name" />
+                        <Label class="listPlaces" :text="p.name" />
                     </StackLayout>
                 </v-template>
             </ListView>
-              <button text="lert" @tap="lerler" />
             <button text="Back" @tap="GetHome" />
         </StackLayout>
     </Page>
@@ -25,10 +24,7 @@ export default {
     methods: {
         GetHome(args) {
             this.$navigateTo(HomePage);
-        },
-           lerler(args) {
-            alert(global.longi);
-        }    
+        } 
     },
      data() {
             return {
@@ -47,3 +43,28 @@ export default {
     
 };
 </script>
+
+<style scoped>
+     Page {
+        background-color: #1F1B24;
+        color: aliceblue;
+    }
+
+     .mySubtitle{
+         vertical-align: center;
+         color: aliceblue;
+         text-align: center;
+         font-size: 30;
+         margin-top: 10;
+    }
+    .listPlaces{
+        color: aliceblue;
+        font-size: 20;
+        border-bottom: 2;
+        border-bottom-color: aliceblue;
+    }
+    button{
+         background-color: aliceblue;
+       color: #1F1B24;
+    }
+</style>

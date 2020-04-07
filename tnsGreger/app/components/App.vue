@@ -1,6 +1,5 @@
 <template>
-    <Page>
-        <ActionBar title="TNS-vue Gregers - FaraHärIfrån"/>
+    <Page actionBarHidden="true">
         <GridLayout>
            <frame id="home-page">
              <HomePage />
@@ -19,17 +18,3 @@ import { screen } from 'tns-core-modules/platform';
    },
   }
 </script>
-
-<style scoped>
-    ActionBar {
-        background-color: #53ba82;
-        color: #ffffff;
-    }
-
-    .message {
-        vertical-align: center;
-        text-align: center;
-        font-size: 20;
-        color: #333333;
-    }
-</style>
