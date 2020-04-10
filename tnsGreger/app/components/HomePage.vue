@@ -6,6 +6,7 @@
             <label class="mySubtitle" text="Search for locations"></label>
             <TextField class="inputkoord" v-model="latVal" hint="Latitude" keyboardType="number" returnKeyType="next" />
             <TextField class="inputkoord" v-model="longVal" hint="Longitude" keyboardType="number" returnKeyType="next" />
+            <TextField class="inputkoord" v-model="numVal" hint="Amount of locations" keyboardType="number" returnKeyType="next" />
             <button text="Search" @tap="ShowLocationsTap" />
         </StackLayout>
     </Page>
@@ -21,6 +22,7 @@ export default {
         ShowLocationsTap(args) {
             global.lati = this.latVal;
             global.longi = this.longVal;
+            global.numbi = this.numVal;
             this.$navigateTo(showlocations);
         },
     },
@@ -28,6 +30,7 @@ export default {
         return {
             latVal: '',
             longVal: '',
+            numVal: '',
         }
     }
 };

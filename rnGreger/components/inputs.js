@@ -30,7 +30,7 @@ export default function SetSearch() {
       <View style={styles.number}>
       <TextInput
           style={styles.inkoord}
-          placeholder="number stations"
+          placeholder="Amount of locations"
           onChangeText={numb => setnum(numb)}
           keyboardType="numeric"
         />
