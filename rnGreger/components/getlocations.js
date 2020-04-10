@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 
 export default class ListLocations extends React.Component {
   constructor(props) {
@@ -12,12 +12,15 @@ export default class ListLocations extends React.Component {
   componentDidMount() {
     const lati = global.lati;
     const longi = global.longi;
+    const ns = global.numbi;
     return fetch(
       'https://api.resrobot.se/v2/location.nearbystops?key=<KEY>&originCoordLat=' +
         lati +
         '&originCoordLong=' +
         longi +
-        '&maxNo=5&format=json',
+        '&maxNo=' +
+         numbi +
+        '&format=json',
     )
       .then(response => response.json())
       .then(responseJson => {
@@ -35,7 +38,6 @@ export default class ListLocations extends React.Component {
     if (this.state.isloading) {
       return (
         <View style={styles.container}>
-          <ActivityIndicator />
           <Text style={styles.text}> Loading Locations </Text>
         </View>
       );
@@ -55,28 +57,21 @@ export default class ListLocations extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#1F1B24',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignSelf: 'stretch',
   },
   text: {
-    color: '#fff',
-  },
-  inputkord: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    justifyContent: 'flex-end',
-    color: '#fff',
-    backgroundColor: '#eee',
+    fontSize: 20,
+color: '#f0f8ff',
+padding: 10,
   },
   keystyle: {
-    flex: 1,
-    alignSelf: 'stretch',
-    margin: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomColor: '#eee',
+
+    color: '#f0f8ff',
+    borderBottomColor: '#f0f8ff',
+    borderBottomWidth: 0.5,
   },
 });
