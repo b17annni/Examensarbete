@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, Button, TextInput} from 'react-native';
+import {Text, View, StyleSheet, TextInput} from 'react-native';
 
 export default function SetSearch() {
   const [long, setlong] = useState('');
   const [lat, setlat] = useState('');
+  const [numb, setnum] = useState('');
   global.lati = lat;
   global.longi = long;
+  global.numbi = numb;
 
   return (
     <View style={styles.container}>
       <View style={styles.inputrow}>
-        <Text style={styles.text}>Latitude: </Text>
         <TextInput
           style={styles.inkoord}
           placeholder="Latitude"
@@ -19,7 +20,6 @@ export default function SetSearch() {
         />
       </View>
       <View style={styles.inputrow}>
-        <Text style={styles.text}>Longitude: </Text>
         <TextInput
           style={styles.inkoord}
           keyboardType="numeric"
@@ -27,34 +27,34 @@ export default function SetSearch() {
           onChangeText={long => setlong(long)}
         />
       </View>
+      <View style={styles.number}>
+      <TextInput
+          style={styles.inkoord}
+          placeholder="number stations"
+          onChangeText={numb => setnum(numb)}
+          keyboardType="numeric"
+        />
+        </View>
     </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#1F1B24',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   text: {
-    color: '#eee',
-  },
-  btn: {
-    color: '#eee',
-  },
-  inputrow: {
-    flexDirection: 'row',
+    fontSize: 30,
+    color: '#f0f8ff',
   },
   inkoord: {
     height: 40,
-    width: 200,
+    width: 300,
     borderColor: 'gray',
     borderWidth: 1,
-    justifyContent: 'flex-end',
     color: '#1F1B24',
-    backgroundColor: '#eee',
+    backgroundColor: '#f0f8ff',
     padding: 10,
-    marginBottom: 5,
+    margin: 5,
   },
 });

@@ -2,7 +2,7 @@
     <Page actionBarHidden="true">
         <StackLayout>
             <label class="myTitle" text="Gregers-FaraHärIfrån"></label>
-            <label class="middle">NativeScript</label>
+            <label class="middle">NativeScript-Vue</label>
             <label class="mySubtitle" text="Search for locations"></label>
             <TextField class="inputkoord" v-model="latVal" hint="Latitude" keyboardType="number" returnKeyType="next" />
             <TextField class="inputkoord" v-model="longVal" hint="Longitude" keyboardType="number" returnKeyType="next" />
@@ -50,7 +50,7 @@ export default {
 
     Page {
         background-color: #1F1B24;
-        color: aliceblue;
+        color: #f0f8ff;
     }
     button {
        background-color: aliceblue;
