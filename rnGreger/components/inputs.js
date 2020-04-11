@@ -17,6 +17,7 @@ export default function SetSearch() {
           placeholder="Latitude"
           onChangeText={lat => setlat(lat)}
           keyboardType="numeric"
+          returnKeyType="next"
         />
       </View>
       <View style={styles.inputrow}>
@@ -25,6 +26,7 @@ export default function SetSearch() {
           keyboardType="numeric"
           placeholder="Longitude"
           onChangeText={long => setlong(long)}
+          returnKeyType="next"
         />
       </View>
       <View style={styles.number}>
@@ -33,6 +35,7 @@ export default function SetSearch() {
           placeholder="Amount of locations"
           onChangeText={numb => setnum(numb)}
           keyboardType="numeric"
+          returnKeyType="next"
         />
         </View>
     </View>
