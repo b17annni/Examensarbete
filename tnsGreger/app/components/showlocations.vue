@@ -35,7 +35,7 @@ export default {
             var lat = global.lati;
             var long = global.longi;
             var num = global.numbi;
-            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=808aabc0-1955-4159-b21c-46b52d70dce1&originCoordLat="+lat+"&originCoordLong="+long+"&maxNo="+num+"&format=json").then(result => {
+            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=<KEY>&originCoordLat="+lat+"&originCoordLong="+long+"&maxNo="+num+"&format=json").then(result => {
     this.location = result.StopLocation;
 }, error => {
     console.log(error);
