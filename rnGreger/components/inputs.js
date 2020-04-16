@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, TextInput} from 'react-native';
+import {View, StyleSheet, TextInput} from 'react-native';
 
 export default function SetSearch() {
   const [long, setlong] = useState('');
@@ -13,6 +13,8 @@ export default function SetSearch() {
     <View style={styles.container}>
       <View style={styles.inputrow}>
         <TextInput
+        accessible={true}
+        accessibilityLabel="sLat"
           style={styles.inkoord}
           placeholder="Latitude"
           onChangeText={lat => setlat(lat)}
@@ -22,6 +24,8 @@ export default function SetSearch() {
       </View>
       <View style={styles.inputrow}>
         <TextInput
+       accessible={true}
+       accessibilityLabel="sLong"
           style={styles.inkoord}
           keyboardType="numeric"
           placeholder="Longitude"
@@ -31,6 +35,8 @@ export default function SetSearch() {
       </View>
       <View style={styles.number}>
       <TextInput
+     accessible={true}
+     accessibilityLabel="snum"
           style={styles.inkoord}
           placeholder="Amount of locations"
           onChangeText={numb => setnum(numb)}

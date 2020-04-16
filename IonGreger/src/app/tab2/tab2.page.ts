@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  GetLocations () {
+    return this.http.get(
+      "https://api.resrobot.se/v2/location.nearbystops.json?key=808aabc0-1955-4159-b21c-46b52d70dce1&originCoordLat=55.613296&originCoordLong=12.976321"
+    );
+  }
 
 }

@@ -14,6 +14,8 @@ function HomeScreen({navigation}) {
       <Myheader />
       <SetSearch />
       <TouchableOpacity
+      accessible={true}
+      accessibilityLabel="btnsearch"
         style={styles.btn}
         onPress={() => navigation.navigate('ShowLocations')} >
         <Text>Search</Text>
@@ -28,6 +30,8 @@ function ShowLocations({navigation}) {
       <Text style={styles.text}>Show My locations</Text>
       <ListLocations />
       <TouchableOpacity
+       accessible={true}
+       accessibilityLabel="btnback"
         style={styles.btnback}
         onPress={() => navigation.navigate('Home')} >
         <Text>Back</Text>
