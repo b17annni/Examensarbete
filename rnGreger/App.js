@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import SetSearch from './components/homepage';
-import ListLocations from './components/getlocations';
+import ListLocations from './components/showlocations';
 
 
 function HomeScreen({navigation}) {

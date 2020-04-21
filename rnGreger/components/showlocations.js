@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
+
 export default class ListLocations extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,7 @@ export default class ListLocations extends React.Component {
         '&originCoordLong=' +
         longi +
         '&maxNo=' +
-         numbi +
+         ns +
         '&format=json',
     )
       .then(response => response.json())
