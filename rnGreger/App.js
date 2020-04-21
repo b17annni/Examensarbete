@@ -4,8 +4,9 @@ import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import SetSearch from './components/inputs';
+import SetSearch from './components/homepage';
 import ListLocations from './components/getlocations';
+
 
 function HomeScreen({navigation}) {
   return (
