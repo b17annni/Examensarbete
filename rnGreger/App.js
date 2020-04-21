@@ -6,12 +6,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import SetSearch from './components/inputs';
 import ListLocations from './components/getlocations';
-import Myheader from './components/header';
 
 function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <Myheader />
+        <View style={styles.headerContainer}>
+        <Text style={styles.myTitle}>Gregers-FaraHärIfrån</Text>
+        <Text style={styles.middle}>React Native</Text>
+        <Text style={styles.mySubtitle}> Sök hållplatser </Text>
+      </View>
       <SetSearch />
       <TouchableOpacity
       accessible={true}
@@ -86,7 +89,26 @@ color: '#f0f8ff',
         alignSelf: 'stretch',
         margin: 10,
         paddingTop: 7,
-      }
+      },
+      headerContainer: {
+        padding: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      myTitle: {
+        
+        fontSize: 40,
+        color: '#f0f8ff',
+      },
+      middle: {
+        fontSize: 15,
+        color: '#f0f8ff',
+        margin: 2,
+      },
+      mySubtitle:{
+    fontSize: 30,
+    color: '#f0f8ff',
+      },
 });
 
 export default App;
