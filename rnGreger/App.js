@@ -33,13 +33,6 @@ function ShowLocations({navigation}) {
     <View style={styles.container}>
       <Text style={styles.text}>Show My locations</Text>
       <ListLocations />
-      <TouchableOpacity
-       accessible={true}
-       accessibilityLabel="btnback"
-        style={styles.btnback}
-        onPress={() => navigation.navigate('Home')} >
-        <Text>Back</Text>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -51,7 +44,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}} />
-        <Stack.Screen name="ShowLocations" component={ShowLocations} options={{headerShown:false}} />
+        <Stack.Screen name="ShowLocations" component={ShowLocations} />
       </Stack.Navigator>
     </NavigationContainer>
   );
