@@ -4,7 +4,12 @@
             <label class="myTitle" text="Gregers-FaraHärIfrån"></label>
             <label class="middle">NativeScript-Vue</label>
             <label class="mySubtitle" text="Search for locations"></label>
-            <TextField class="inputkoord" v-model="latVal" hint="Latitude" keyboardType="number" returnKeyType="next" />
+            <TextField 
+                class="inputkoord" 
+                v-model="latVal" 
+                hint="Latitude" 
+                keyboardType="number" 
+                returnKeyType="next" />
             <TextField class="inputkoord" v-model="longVal" hint="Longitude" keyboardType="number" returnKeyType="next" />
             <TextField class="inputkoord" v-model="numVal" hint="Amount of locations" keyboardType="number" returnKeyType="next" />
             <button text="Search" @tap="ShowLocationsTap" />
@@ -50,7 +55,6 @@ export default {
            text-align: center;
            font-size: 30;
     }
-
     Page {
         background-color: #1F1B24;
         color: #f0f8ff;

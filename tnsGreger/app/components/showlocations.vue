@@ -2,13 +2,7 @@
     <Page actionBarHidden="true">
            <StackLayout>
             <label class="mySubtitle" text="Your Locations"></label>
-             <ListView for="p in location" class="list-group">
-                <v-template>
-                    <StackLayout class="list-group-item">
-                        <Label class="listPlaces" :text="p.name" />
-                    </StackLayout>
-                </v-template>
-            </ListView>
+              
             <button text="Back" @tap="GetHome" />
         </StackLayout>
     </Page>
@@ -35,7 +29,7 @@ export default {
             var lat = global.lati;
             var long = global.longi;
             var num = global.numbi;
-            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=<KEY>&originCoordLat="+lat+"&originCoordLong="+long+"&maxNo="+num+"&format=json").then(result => {
+            http.getJSON("https://api.resrobot.se/v2/location.nearbystops?key=<KEY>&originCoordLat="+lat+"&originCoordLong="+long+"&maxNo="+num+"&r=5000&format=json").then(result => {
     this.location = result.StopLocation;
 }, error => {
     console.log(error);

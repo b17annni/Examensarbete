@@ -13,15 +13,15 @@ export default class ListLocations extends React.Component {
   componentDidMount() {
     const lati = global.lati;
     const longi = global.longi;
-    const ns = global.numbi;
+    const num = global.numbi;
     return fetch(
       'https://api.resrobot.se/v2/location.nearbystops?key=<KEY>&originCoordLat=' +
         lati +
         '&originCoordLong=' +
         longi +
         '&maxNo=' +
-         ns +
-        '&format=json',
+         num +
+        '&r=5000&format=json',
     )
       .then(response => response.json())
       .then(responseJson => {
